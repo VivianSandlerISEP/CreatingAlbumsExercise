@@ -7,6 +7,9 @@
 /dataSources/
 /dataSources.local.xml
 
+
+.idea/
+
 # Created by https://www.toptal.com/developers/gitignore/api/intellij,java,maven,macos,windows,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij,java,maven,macos,windows,linux
 
@@ -241,5 +244,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,java,maven,macos,windows,linux
