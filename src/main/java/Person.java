@@ -9,12 +9,14 @@ public class Person {
         this.name = name;
         this.stageName = stageName;
     }
-    //getter_setter for Name
-    public String getName (){
+
+    // Getter methods
+    public String getName(){
         return this.name;
     }
-    //getter_setter for stageName
-    public String getStageName (){
+
+    public String getStageName(){
         return this.stageName;
     }
 }
+
