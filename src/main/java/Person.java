@@ -14,9 +14,12 @@ public class Person {
     public String getName(){
         return this.name;
     }
-
     public String getStageName(){
         return this.stageName;
+    }
+    //override for readability output
+    public String toString() {
+        return stageName + " (" + name + ")";
     }
 }
 
