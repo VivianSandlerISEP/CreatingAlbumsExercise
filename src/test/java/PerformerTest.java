@@ -20,8 +20,9 @@ class PerformerTest {
 
     @Test
     void testGetPerformer2(){
-        Performer performer = new Performer (new Person( "Curtis James Jackson III", "50 Cent"));  //just testing if this works
-        assertEquals("50 Cent (Curtis James Jackson III)", performer.getPerson());
+        Performer performer = new Performer (new Person( "Curtis James Jackson III", "50 Cent"));
+        assertEquals("Curtis James Jackson III", performer.getPerson().getName());                        //These might be redundant!!!!
+        assertEquals("50 Cent", performer.getPerson().getStageName());
     }
 
 }
