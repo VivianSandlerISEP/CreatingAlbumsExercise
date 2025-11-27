@@ -17,6 +17,7 @@ class WriterTest {
         Person person = new Person ("Vivian Sandler", "The Vivster");
         Writer writer2 = new Writer (person);
         assertEquals("The Vivster", writer2.getWriter().getStageName());
+        assertEquals("Vivian Sandler", writer2.getWriter().getName());
     }
 
     @Test
