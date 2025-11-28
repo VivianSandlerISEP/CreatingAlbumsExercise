@@ -24,22 +24,27 @@ public class Album {
     }
 
     public void addSongs(Song song) {
+
         this.songs.add(song);
     }
 
     public void removeSongs(Song song) {
+
         this.songs.remove(song);
     }
 
     public ArrayList<Song> getSongs() {
+
         return songs;
     }
 
     public int getNumberOfSongs() {
+
         return songs.size();
     }
 
     public ReleaseDate getReleaseDate() {
+
         return releaseDate;
     }
 
