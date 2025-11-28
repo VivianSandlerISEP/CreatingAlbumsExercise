@@ -10,7 +10,7 @@ public class Song {
     private Writer writer;
 
     //Constructor
-    public Song () {
+    public Song (Title songTitle, ReleaseDate releaseDate, ArrayList<Performer> performers, Label labelName, Writer writer) {
         this.songTitle = songTitle;
         this.releaseDate = releaseDate;
         this.performers = performers;
@@ -32,14 +32,15 @@ public class Song {
 //        return performers;
 //    }
 
-    public Label getLabelName() {
+    public Label getLabel() {
         return labelName;
     }
-    public Writer getWriter() {
+
+    public Writer getSongWriter() {
         return writer;
     }
 
-    //Method to get the album that the song belongs to
+   /* //Method to get the album that the song belongs to
     public Album getAlbum() {
         return album;
     }
@@ -49,7 +50,12 @@ public class Song {
             return true;
         }
         return false;
-    }
+    }*/
+
+    //getter for performer
+    /* public getPerformer(){
+        return new
+    } */
 
     // Method to add performers
     public void addPerformer(Performer performer) {
