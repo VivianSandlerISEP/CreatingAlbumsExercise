@@ -11,7 +11,7 @@ public class Song {
     private Writer writer;
 
     //Constructor
-    public Song (/*Title songTitle, ReleaseDate releaseDate, ArrayList<Performer> performers, Label labelName, Writer writer*/) {
+    public Song () {
         this.songTitle = songTitle;
         this.releaseDate = releaseDate;
         this.performers = performers;
