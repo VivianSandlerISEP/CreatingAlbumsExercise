@@ -3,13 +3,13 @@ import java.util.ArrayList;
 
 public class Album {
 
-    private String albumTitle;
+    private Title albumTitle;
     private Performer albumPerformer;
-    private ArrayList<Song> songs;
     private ReleaseDate releaseDate;
     private Label albumLabel;
+    private ArrayList<Song> songs;
 
-    public Album() {
+    public Album(Title albumTitle, Performer albumPerformer, ReleaseDate releaseDate, Label albumLabel,  ArrayList<Song> songs) {
 
         this.albumTitle = albumTitle;
         this.albumPerformer = albumPerformer;
@@ -19,8 +19,17 @@ public class Album {
 
     }
 
-    public String getAlbumTitle() {
+    public Title getAlbumTitle() {
         return albumTitle;
+    }
+    public Label getAlbumLabel() {
+        return albumLabel;
+    }
+    public ReleaseDate getReleaseDate() {
+        return releaseDate;
+    }
+    public Performer getAlbumPerformer() {
+        return albumPerformer;
     }
 
     public void addSongs(Song song) {
@@ -43,15 +52,10 @@ public class Album {
         return songs.size();
     }
 
-    public ReleaseDate getReleaseDate() {
-
-        return releaseDate;
-    }
-
     @Override
 
     public String toString(){
-        return "Album: " + albumTitle + ", Performer:  " + albumPerformer + ", ReleaseDate: " + releaseDate.getYear() + ", Label: " + albumLabel + ", Number of songs: " + songs.size();
+        return "Album: " + albumTitle.toString() + ", Performer: " + albumPerformer.toString() + ", ReleaseDate: " + releaseDate.getYear() + ", Label: " + albumLabel.toString() + ", Number of songs: " + songs.size();
 
     }
 }

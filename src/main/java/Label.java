@@ -9,6 +9,10 @@ public class Label {
         return name;
     }
 
+    public String toString() {
+        return name.toString();
+    }
+
 
  /*
  // IMPORTANTE: Para assertEquals funcionar com objetos
