@@ -11,7 +11,7 @@ public class Writer {
     public Person getWriter() {
         return writer;
     }
-    public String writerToString() {
-            return "Writer: " + writer.toString();
+    public String nameToString() {
+            return "Writer: " + writer.nameToString();
     }
 }

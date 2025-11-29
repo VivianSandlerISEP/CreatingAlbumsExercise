@@ -86,14 +86,15 @@ public class SongTest {
         ReleaseDate releaseDate2 = new ReleaseDate(date2);
         Title title2 = new Title("Elizabeth Taylor");
         Label label2 = new Label("Republic");
-        Writer writer2 = new Writer(new Person("Taylor Swift and Max Martin","Taylor Swift and Max Martin"));
+        Writer writer2 = new Writer(new Person("Max Martin","Max Martin"));
 
         ArrayList<Performer> performers2 = new ArrayList<>();
         performers2.add(new Performer(new Person("Taylor Swift", "Taylor Swift")));
 
         Song song2 = new Song(title2, releaseDate2, performers2, label2, writer2);
 
-        String expected2 = "Elizabeth Taylor - Taylor Swift (2025)";
+        String expected2 = "Elizabeth Taylor - Taylor Swift (Taylor Swift); Writer: Max Martin (2025)";
         assertEquals(expected2, song2.toString());
+
     }
 }

@@ -75,6 +75,6 @@ public class Song {
     //toString
     @Override
     public String toString() {
-        return songTitle + " - " + performers.toString() + " (" + releaseDate.getYear() + ")";
+        return songTitle.toString() + " - " + performers.get(0).toString() + "; " + writer.nameToString() + " (" + releaseDate.getYear() + ")";
     }
 }
