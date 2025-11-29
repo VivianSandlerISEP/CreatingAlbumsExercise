@@ -1,15 +1,15 @@
 public class Performer {
 
-    private Person person;
+    private Person performer;
 
-    public Performer(Person person){
-        this.person = person;      //assign the parameter to a field
+    public Performer(Person performer){
+        this.performer = performer;
     }
-    public Person getPerson(){
-        return person;
+    public Person getPerformer(){
+        return performer;
     }
     //toString
     public String toString(){
-        return person.toString();
+        return performer.toString();
     }
 }
