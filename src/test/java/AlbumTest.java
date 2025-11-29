@@ -42,6 +42,7 @@ class AlbumTest {
         String expected = "Album: The Life of a Showgirl, Performer: Taylor Swift (Taylor Swift), ReleaseDate: 2030, Label: Republic, Number of songs: 0";
         assertEquals(expected, album.toString());
     }
+
     @Test
     public void testAddSong() {
 
@@ -82,10 +83,11 @@ class AlbumTest {
         assertEquals(expectedAlbum, album.toString());
 
     }
+
     @Test
     public void testMultipleAddSong() {
 
-        //Song
+        //Song1
         Title title = new Title("The Fate of Ophelia");
         ReleaseDate date = new ReleaseDate(LocalDate.of(2025, 10, 3));
         ArrayList<Performer> performers = new ArrayList<>();
@@ -97,13 +99,28 @@ class AlbumTest {
         ArrayList<Song> songs = new ArrayList<>();
         songs.add(new Song(title, date, performers, label, writer));
 
+        //Song2
+        Title title2 = new Title("Elizabeth Taylor");
+        ReleaseDate date2 = new ReleaseDate(LocalDate.of(2025, 10, 4));
+        ArrayList<Performer> performers2 = new ArrayList<>();
+        performers.add(new Performer(new Person("TS", "TS")));
+        Writer writer2 = new Writer(new Person("Taylor S.", "Taylor S."));
+        Label label2 = new Label("Republic");
+
+        Song song2 = new Song(title2, date2, performers2, label2, writer2);
+        ArrayList<Song> songs2 = new ArrayList<>();
+        songs.add(new Song(title2, date2, performers2, label2, writer2));
+
         //Album
         Title albumTitle = new Title("The Life of a Showgirl");
         Performer albumPerformer = new Performer(new Person("Taylor Swift", "Taylor Swift"));
-        ReleaseDate date2 = new ReleaseDate(LocalDate.of(2030, 11, 1));
+        ReleaseDate date3 = new ReleaseDate(LocalDate.of(2030, 11, 1));
         Label albumLabel = new Label("Republic");
 
         Album album = new Album(albumTitle, albumPerformer, date2, albumLabel, songs);
+
+        album.addSongs(song);
+        album.addSongs(song2);
 
 //        List<Song> list = album.addSongs(song);
 //        List<Song> list = album.addSongs(song);
@@ -112,37 +129,20 @@ class AlbumTest {
         String expected = "The Fate of Ophelia - Taylor Swift (Taylor Swift); Writer: Taylor Swift (2025)";
         assertEquals(expected, song.toString());
 
+        //assertEquals for Song
+        String expected2 = "Elizabeth Taylor - Taylor Swift (Taylor Swift); Writer: Taylor Swift (2025)";
+        assertEquals(expected, song.toString());
+
         album.addSongs(song);
-        List<Song> list = album.getSongs();
-        assertEquals(1, list.size());
-        assertEquals(song, list.get(0));
+        List<Song> list = List.of(song, song2);
+        assertArrayEquals(list.toArray(), album.getSongs().toArray());
 
         //assertEquals for Album
-        String expectedAlbum = "Album: The Life of a Showgirl, Performer: Taylor Swift (Taylor Swift), ReleaseDate: 2030, Label: Republic, Number of songs: 1";
+        String expectedAlbum = "Album: The Life of a Showgirl, Performer: Taylor Swift (Taylor Swift), ReleaseDate: 2030, Label: Republic, Number of songs: 2";
         assertEquals(expectedAlbum, album.toString());
 
     }
-//    @Test
-//    public void testAddMultiplePerformers() {
-//        Title title = new Title("Test song");
-//        ReleaseDate date = new ReleaseDate(LocalDate.of(2025, 1, 1));
-//        Label label = new Label("Test label");
-//        Writer writer = new Writer(new Person("Writer", "Writer"));
-//        ArrayList<Performer> performers = new ArrayList<>();
-//
-//        Song song = new Song(title, date, performers, label, writer);
-//
-//
-//        Performer performer1 = new Performer(new Person("Performer1", "Performer1StageName"));
-//        Performer performer2 = new Performer(new Person("Performer2", "Performer2StageName"));
-//
-//        song.addPerformer(performer1);
-//        song.addPerformer(performer2);
-//
-//        List<Performer> expected = List.of(performer1, performer2);
-//        assertArrayEquals(expected.toArray(), song.getPerformers().toArray());
-//
-//    }
+}
 
 
 
