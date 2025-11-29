@@ -11,15 +11,6 @@ class AlbumTest {
     @Test
     void construtorInicialized() {
 
-        /*Title title = new Title("The Fate of Ophelia");
-        ReleaseDate date = new ReleaseDate(LocalDate.of(2025, 10, 3));
-        ArrayList<Performer> performers = new ArrayList<>();
-        performers.add(new Performer(new Person("Taylor Swift", "Taylor Swift")));
-        Writer writer = new Writer(new Person("Taylor Swift", "Taylor Swift"));
-        Label label = new Label("Republic");
-
-        Song song = new Song(title, date, performers, label, writer);*/
-
         Title albumTitle = new Title("The Life of a Showgirl");
         Performer albumPerformer = new Performer(new Person("Taylor Swift", "Taylor Swift"));
         ArrayList<Song> songs = new ArrayList<>();
@@ -33,10 +24,6 @@ class AlbumTest {
         assertEquals("Taylor Swift", album.getAlbumPerformer().getPerformer().getName());
         assertEquals(date2, album.getReleaseDate());
         assertEquals("Republic", album.getAlbumLabel().getlabelName());
-
-        //assertEquals for Song
-        /*String expected = "Elizabeth Taylor - Taylor Swift (Taylor Swift); Writer: Max Martin (2025)";*/
-        /*assertEquals(songs, album.getSongs());*/
 
         //assertEquals for Album
         String expected = "Album: The Life of a Showgirl, Performer: Taylor Swift (Taylor Swift), ReleaseDate: 2030, Label: Republic, Number of songs: 0";
@@ -65,9 +52,6 @@ class AlbumTest {
         Label albumLabel = new Label("Republic");
 
         Album album = new Album(albumTitle, albumPerformer, date2, albumLabel, songs);
-
-//        List<Song> list = album.addSongs(song);
-//        List<Song> list = album.addSongs(song);
 
         //assertEquals for Song
         String expected = "The Fate of Ophelia - Taylor Swift (Taylor Swift); Writer: Taylor Swift (2025)";
@@ -121,9 +105,6 @@ class AlbumTest {
 
         album.addSongs(song);
         album.addSongs(song2);
-
-//        List<Song> list = album.addSongs(song);
-//        List<Song> list = album.addSongs(song);
 
         //assertEquals for Song
         String expected = "The Fate of Ophelia - Taylor Swift (Taylor Swift); Writer: Taylor Swift (2025)";
