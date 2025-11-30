@@ -1,0 +1,65 @@
+@startuml
+
+' Simple classes
+class Title {
+    - name : String
+}
+class Label {
+    - labelName : String
+}
+class ReleaseDate {
+    - releaseDate : Date
+}
+
+' Person class
+class Person {
+    - name : String
+    -stageName : String
+}
+
+' Performer and Writer are roles connected to Person
+class Performer {
+}
+class Writer {
+}
+
+Performer --> Person : identity
+Writer --> Person : identity
+
+' Album class
+class Album {
+    - title : Title
+    - label : Label
+    - releaseDate : ReleaseDate
+    - performer : Performer
+    - songs : List<Song>
+    + addSong(song : Song) : void
+    + getSongs() : List<Song>
+}
+
+Album --> Title : has one
+Album --> Label : has one
+Album --> ReleaseDate : has one
+Album --> Performer : has one
+Album --> "0..*" Song : contains
+
+' Song class
+class Song {
+    - title  : Title
+         - releaseDate : ReleaseDate
+            - performers : ArrayList<Performer>
+            - labelName : Label
+            - writer : Writer
+
+
+    }
+}
+
+Song --> Title : has one
+Song --> Label : has one
+Song --> ReleaseDate : has one
+Song --> Writer : has one
+Song --> "1..*" Performer : performed by
+
+@enduml
+
