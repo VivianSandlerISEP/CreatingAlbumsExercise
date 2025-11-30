@@ -13,8 +13,14 @@ class ReleaseDate {
 
 ' Person class
 class Person {
-    - name : String
-    -stageName : String
+    - name :
+    - stageName :
+
+    + getName() : Name
+    + getStageName() : StageName
+    + toString() : String
+    + nameToString() : String
+    + stageNameToString() : String
 }
 
 ' Performer and Writer are roles connected to Person
@@ -28,13 +34,25 @@ Writer --> Person : identity
 
 ' Album class
 class Album {
-    - title : Title
-    - label : Label
-    - releaseDate : ReleaseDate
-    - performer : Performer
-    - songs : List<Song>
-    + addSong(song : Song) : void
-    + getSongs() : List<Song>
+
+     - albumTitle : Title
+     - albumPerformer : Performer
+     - releaseDate : ReleaseDate
+     - albumLabel : Label
+     - songs : ArrayList<Song>
+
+     + Album(albumTitle : Title, albumPerformer : Performer, releaseDate : ReleaseDate, albumLabel : Label, songs : ArrayList<Song>)
+
+     + getAlbumTitle() : Title
+     + getAlbumLabel() : Label
+     + getReleaseDate() : ReleaseDate
+     + getAlbumPerformer() : Performer
+     + addSongs(song : Song) : void
+     + removeSongs(song : Song) : void
+     + getSongs() : ArrayList<Song>
+     + getNumberOfSongs() : int
+     + toString() : String
+
 }
 
 Album --> Title : has one
@@ -45,14 +63,24 @@ Album --> "0..*" Song : contains
 
 ' Song class
 class Song {
-    - title  : Title
-         - releaseDate : ReleaseDate
-            - performers : ArrayList<Performer>
-            - labelName : Label
-            - writer : Writer
 
+    - songTitle : Title
+    - releaseDate : ReleaseDate
+    - performers : ArrayList<Performer>
+    - labelName : Label
+    - writer : Writer
 
-    }
+    + Song(songTitle : Title, releaseDate : ReleaseDate, performers : ArrayList<Performer>, labelName : Label, writer : Writer)
+
+    + getSongTitle() : Title
+    + getReleaseDate() : ReleaseDate
+    + getLabel() : Label
+    + getSongWriter() : Writer
+    + getPerformers() : ArrayList<Performer>
+    + addPerformer(performer : Performer) : void
+    + countPerformers() : int
+    + toString() : String
+
 }
 
 Song --> Title : has one
