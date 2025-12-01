@@ -18,7 +18,7 @@ public class Person {
     public String toString() {
         return stageName + " (" + name + ")";
     }
-    public String nameToString(){
+    public String nameToString(){           ???
         return this.name;
     }
     public String stageNameToString(){

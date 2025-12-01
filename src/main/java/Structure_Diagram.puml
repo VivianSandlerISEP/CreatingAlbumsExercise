@@ -2,22 +2,36 @@
 
 ' Simple classes
 class Title {
-    - name : String
+    - title : String
+
+    + Title(title : String)
+    + getTitle() : String
+    + toString() : String
 }
 class Label {
-    - labelName : String
+    - name : String
+
+    + Label(name : String)
+    + getLabelName() : String
+    + toString() : String
 }
 class ReleaseDate {
-    - releaseDate : Date
+    - releaseDate : LocalDate
+
+    + ReleaseDate(releaseDate : LocalDate)
+    + getReleaseDate() : LocalDate
+    + getYear() : Int
 }
 
 ' Person class
 class Person {
-    - name :
-    - stageName :
+    - name : String
+    - stageName : String
 
-    + getName() : Name
-    + getStageName() : StageName
+    + Person(name : String, stageName : String)
+
+    + getName() : String
+    + getStageName() : String
     + toString() : String
     + nameToString() : String
     + stageNameToString() : String
@@ -25,8 +39,20 @@ class Person {
 
 ' Performer and Writer are roles connected to Person
 class Performer {
+    - performer : Person
+
+    + Performer(performer : Person)
+    + getPerformer() : Person
+    + toString() : String
+
 }
 class Writer {
+    - writer : Person
+
+    + Writer(person : Person)
+    + getWriter() : Person
+    + nameToString() : String
+
 }
 
 Performer --> Person : identity
